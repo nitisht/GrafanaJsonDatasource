@@ -1,6 +1,6 @@
 {
     "name": "JSON",
-    "id": "simpod-json-datasource",
+    "id": "parseable-json-datasource",
     "type": "datasource",
     "annotations": true,
     "metrics": true,

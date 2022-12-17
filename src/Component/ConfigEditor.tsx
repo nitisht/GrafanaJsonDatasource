@@ -12,7 +12,7 @@ export const ConfigEditor: ComponentType<Props> = ({options, onOptionsChange}) =
   (
     <>
       <DataSourceHttpSettings
-        defaultUrl={'http://localhost:8080'}
+        defaultUrl={'https://demo.parseable.io'}
         dataSourceConfig={options}
         showAccessOptions={true}
         onChange={onOptionsChange}

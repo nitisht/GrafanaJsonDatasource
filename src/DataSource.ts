@@ -89,18 +89,18 @@ export class DataSource extends DataSourceApi<GrafanaQuery, GenericOptions> {
   annotations = {};
 
   async testDatasource() {
-    const errorMessageBase = 'Data source is not working';
+    const errorMessageBase = 'Parseable server is not reachable';
 
     try {
       const response = await lastValueFrom(
         this.doFetch({
-          url: this.url,
+          url: this.url + '/api/v1/readiness',
           method: 'GET',
         }).pipe(map((response) => response))
       );
 
       if (response.status === 200) {
-        return { status: 'success', message: 'Data source is working', title: 'Success' };
+        return { status: 'success', message: 'Parseable server is reachable', title: 'Success' };
       }
 
       return {
